@@ -15,9 +15,10 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "@babel"
     ],
-    "parser": "babel-eslint",
+    "parser": "@babel/eslint-parser",
     "rules": {
         "no-unused-vars": "warn",
         "react/prop-types": [2, { "skipUndeclared": true }],
