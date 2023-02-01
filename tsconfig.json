@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "noImplicitAny": true,
+    "module": "ES6",
+    "target": "ES6",
+    // "jsx": "preserve",
+		// "noEmit": true,
+		"noEmit": false,
+    "jsx": "react",
+    "allowJs": true,
+    "checkJs": false,
+		"moduleResolution": "node16",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/node_modules/*"]
+}

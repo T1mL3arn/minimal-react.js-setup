@@ -2,23 +2,28 @@ const path = require("path")
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
-    entry: path.resolve(__dirname, './src/index.jsx'),
+    entry: path.resolve(__dirname, './src/index.tsx'),
     mode: "development",
     module:{
         rules: [
             {
-                // Set-up for babel module.
-                // This module allows transpilling JS with Babel and Webpack
-                test: /\.jsx?$/,
+                test: /\.(t|j)sx?$/,
                 exclude: /node_modules/,
-                use: ['babel-loader']
-            }
+                use: 'ts-loader',
+            },
+            // {
+            //     // Set-up for babel module.
+            //     // This module allows transpilling JS with Babel and Webpack
+            //     test: /\.(j|t)sx?$/,
+            //     exclude: /node_modules/,
+            //     use: ['babel-loader']
+            // }
         ]
     },
     resolve: {
         // using this allow to leave off extension when importing
         // e.g import Foo from "./Bar"
-        extensions: ['*', ".js", ".jsx"]
+        extensions: ['*', ".ts", ".tsx", ".js", ".jsx", ]
     },
     output: {
         path: path.resolve(__dirname, './dist'),
